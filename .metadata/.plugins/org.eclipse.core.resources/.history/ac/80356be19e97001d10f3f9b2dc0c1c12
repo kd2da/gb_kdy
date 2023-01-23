@@ -1,0 +1,16 @@
+package value;
+
+public class Main01 {
+
+	public static void main(String[] args) {
+		//변수 선언
+		int num1;
+		//변수 할당
+		num1 = 100;
+		System.out.println(num1);
+		System.out.println("num1");
+		
+
+	}
+
+}

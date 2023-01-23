@@ -1,0 +1,19 @@
+package value;
+
+public class Main01 {
+
+	public static void main(String[] args) {
+		//변수 선언
+		int num1;
+		//변수 할당
+		num1 = 100;
+		System.out.println(num1);
+		System.out.println("num1");
+		
+		// 선언 + 할당 + 접미사의 사용
+		long num2 = 123456789000L;
+		System.out.println(num2);
+
+	}
+
+}
