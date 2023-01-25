@@ -30,9 +30,11 @@ public class Main08 {
 		 * "택시를 타고 가라" 출력
 		 * 그렇지 않으면 "걸어가라" 출력
 		 */
-		char card = 'Y';
 		
-		if(money >= 3000 || card == 'Y') {
+		// Y : 카드가 있음, N : 카드 없음
+		char hasCard = 'Y';
+		
+		if(money >= 3000 || hasCard == 'Y') {
 			System.out.println("택시를 타고 가라~");
 		} else {
 			System.out.println("걸어가라~");
@@ -60,22 +62,34 @@ public class Main08 {
 		 * 어떤 특정 정수값 a1, b1, c1의 최대값을 구하여라
 		 * a1 = 10, b1 = 20, c1 = 9
 		 */
-		int a1 = 10, b1 = 20, c1 = 9;
+		int a1 = 22, b1 = 20, c1 = 30;
+		int max = 0;
 		
-		if(a1 >= b1) {
-			if(a1 >= c1) {
-				System.out.println("최대값은 a1 : " + a1);
-			} else {
-				System.out.println("최대값은 c1 : " + c1);				
-			}
+//		if(a1 >= b1) {
+//			if(a1 >= c1) {
+//				System.out.println("최대값은 a1 : " + a1);
+//			} else {
+//				System.out.println("최대값은 c1 : " + c1);				
+//			}
+//		} else {
+//			if(b1 >= c1) {
+//				System.out.println("최대값은 b1 : " + b1);
+//			} else {
+//				System.out.println("최대값은 c1 : " + c1);				
+//			}
+//		}
+		
+		// 교수님 코딩, 엄청 간단하다...
+		if( a1 > b1 && a1 > c1) {
+			max = a1;
 		} else {
-			if(b1 >= c1) {
-				System.out.println("최대값은 b1 : " + b1);
+			if( b1 > c1 ) {
+				max = b1;
 			} else {
-				System.out.println("최대값은 c1 : " + c1);				
+				max = c1;
 			}
 		}
-		
+		System.out.println("최대값은 : " + max);
 		System.out.println("(문제5)");
 		/*
 		 * 문5.(if문)
@@ -130,6 +144,8 @@ public class Main08 {
 				System.out.println("배드민턴");
 				break;
 		}
+		
+		
 		System.out.println("(문제7)");
 		/*
 		 * 문제7.(switch-case)
@@ -137,7 +153,7 @@ public class Main08 {
 		 * 2이면 "안녕"이 두줄, 1이면 "안녕"이 한줄,
 		 * 그 외는 "잘가" 출력
 		 */
-		int num2 = 2;
+		int num2 = 3;
 		switch(num2) {
 		case 3:
 			System.out.println("안녕");
