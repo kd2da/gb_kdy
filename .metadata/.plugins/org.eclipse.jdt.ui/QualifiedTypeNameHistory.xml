@@ -7,4 +7,17 @@
     <fullyQualifiedTypeName name="Class.Character"/>
     <fullyQualifiedTypeName name="Class.HelloWorld"/>
     <fullyQualifiedTypeName name="Class.Article"/>
+    <fullyQualifiedTypeName name="overload.Article"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="boxing.Korean"/>
+    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+    <fullyQualifiedTypeName name="boxing.Navy"/>
+    <fullyQualifiedTypeName name="boxing.Army"/>
+    <fullyQualifiedTypeName name="boxing.AirForce"/>
+    <fullyQualifiedTypeName name="Interface.Character"/>
+    <fullyQualifiedTypeName name="Interface.Monster"/>
+    <fullyQualifiedTypeName name="Static.Article"/>
+    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
+    <fullyQualifiedTypeName name="java_homework.SingRobot"/>
+    <fullyQualifiedTypeName name="java_homework.DrawRobot"/>
 </qualifiedTypeNameHistroy>
