@@ -27,7 +27,7 @@ public class Main05 {
 		String dd = number.substring(4, 6);
 		String genderNum = number.substring(6, 7);
 		
-		// 성별
+		// 성별 : "남자" or "여자"
 		String genderStr = "";
 		if(genderNum.equals("1") || genderNum.equals("3")) {
 			genderStr = "남자";
@@ -35,9 +35,9 @@ public class Main05 {
 			genderStr = "여자";
 		}
 		
-		// 출생년도
+		// 출생년도 yyyy
 		String yyyy = "";
-		if(genderNum.equals("1") || genderNum.endsWith("2")) {
+		if(genderNum.equals("1") || genderNum.equals("2")) {
 			yyyy = "19" + yy;
 		} else {
 			yyyy = "20" + yy;

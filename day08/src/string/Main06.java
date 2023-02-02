@@ -17,16 +17,16 @@ public class Main06 {
 		String data = "D:/photo/2022/travel/food.jpg";
 		int separator1 = data.lastIndexOf("/");
 		
-		String folder_name = data.substring(0, separator1);
-		String fileFullName = data.substring(separator1+1);
-		int separator2 = fileFullName.lastIndexOf(".");
+		String name = data.substring(data.lastIndexOf("/") + 1
+										, data.lastIndexOf("."));
+		String ext = data.substring(data.lastIndexOf(".") + 1);
+		String folder = data.substring(0, data.lastIndexOf("/"));
 		
-		String fileName = fileFullName.substring(0, separator2);
-		String extension = fileFullName.substring(separator2+1);
 		
-		System.out.println("파일이름 : " + fileName
-				+ "\n확장자 : " + extension
-				+ "\n폴더명 : " + folder_name);
+		
+		System.out.println("파일이름 : " + name
+				+ "\n확장자 : " + ext
+				+ "\n폴더명 : " + folder);
 		
 	}
 
