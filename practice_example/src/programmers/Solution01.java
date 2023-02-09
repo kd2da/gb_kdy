@@ -7,7 +7,9 @@ public class Solution01 {
 		System.out.println(s.solution("aukks"	, "wbqd", 	5));
 	}
 }	
-
+/*
+ * LEVEL 1. 둘만의 암호
+ */
 class Solution {
     public String solution(String s, String skip, int index) {
         String answer = "";

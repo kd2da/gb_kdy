@@ -10,7 +10,7 @@ public class Main {
 	public static void main(String[] args) {
 		PrintOmokPan printOmokPan = PrintOmokPan.getInstance();
 //		printOmokPan.printOmokPan(printOmokPan.getOmokPan());
-		
+
 		printOmokPan.printDefault(printOmokPan.getOmokPan());		
 		
 		omokRole1 or = new omokRole1();
