@@ -10,6 +10,9 @@ public class Hello {
 		System.out.println('J' + "ava");
 		System.out.println("" + null);
 //		System.out.println(true + null);
+		
+		System.out.println("hello".substring(0,1));
+		System.out.println("hello".contains("h"));
 
 	}
 
