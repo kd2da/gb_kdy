@@ -1,5 +1,9 @@
 package main;
 
+import java.io.Console;
+import java.util.Scanner;
+import java.util.logging.ConsoleHandler;
+
 import omok.Omokpan;
 
 /*
@@ -13,7 +17,47 @@ import omok.Omokpan;
 public class Main {
 
 	public static void main(String[] args) {
-		Omokpan.getInstance();
+		
+		Omokpan omokPan = Omokpan.getInstance();
+		
+		omokPan.printDefault();
+		omokPan.showPan();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		while(true) {
+			
+			System.out.println("플레이어 1");
+			System.out.print("행 입력 : ");
+			String rowPlayer = sc.next();
+			System.out.print("열 입력 : ");
+			String colPlayer = sc.next();
+			omokPan.printPan("1", rowPlayer, colPlayer);
+			omokPan.showPan();
+			
+			
+			// 승리 여부 판정 
+			if(false) {
+				break;
+			}
+			
+			System.out.println("플레이어 2");
+			System.out.print("행 입력 : ");
+			rowPlayer = sc.next();
+			System.out.print("열 입력 : ");
+			colPlayer = sc.next();
+			omokPan.printPan("2", rowPlayer, colPlayer);
+			omokPan.showPan();
+			
+			// 승리 여부 판정 
+			if(false) {
+				break;
+			}
+			
+			
+			
+			break;
+		}
 	}
 
 }
