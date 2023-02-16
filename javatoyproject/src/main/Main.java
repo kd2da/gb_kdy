@@ -1,10 +1,8 @@
 package main;
 
-import java.io.Console;
-import java.util.Scanner;
-import java.util.logging.ConsoleHandler;
-
 import omok.Omokpan;
+import omok.Panjung;
+import omok.InputPlayer;
 
 /*
  * 1. 오막판 Frame 2. 오목판에 행과 열 정보 그리기
@@ -19,45 +17,50 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Omokpan omokPan = Omokpan.getInstance();
-		
 		omokPan.printDefault();
 		omokPan.showPan();
+		Panjung panJung = new Panjung();
 		
-		Scanner sc = new Scanner(System.in);
+		String bDol = "●";
+		String wDol = "○";
+		
+		InputPlayer blackPlayer = new InputPlayer(bDol);
+		InputPlayer whitePlayer = new InputPlayer(wDol);
+		
+		String winPlayer = "";
 		
 		while(true) {
 			
-			System.out.println("플레이어 1");
-			System.out.print("행 입력 : ");
-			String rowPlayer = sc.next();
-			System.out.print("열 입력 : ");
-			String colPlayer = sc.next();
-			omokPan.printPan("1", rowPlayer, colPlayer);
-			omokPan.showPan();
 			
+			blackPlayer.playerInputRowCol();
+			omokPan.showPan();
+			panJung.setPan(omokPan.getPan());
+			panJung.setRowInt(omokPan.getCurrentRowNum());
+			panJung.setColInt(omokPan.getCurrentColNum());
 			
 			// 승리 여부 판정 
-			if(false) {
+			if(panJung.allCheck()) {
+				winPlayer = bDol;
 				break;
 			}
 			
-			System.out.println("플레이어 2");
-			System.out.print("행 입력 : ");
-			rowPlayer = sc.next();
-			System.out.print("열 입력 : ");
-			colPlayer = sc.next();
-			omokPan.printPan("2", rowPlayer, colPlayer);
+			whitePlayer.playerInputRowCol();
 			omokPan.showPan();
+			panJung.setPan(omokPan.getPan());
+			panJung.setRowInt(omokPan.getCurrentRowNum());
+			panJung.setColInt(omokPan.getCurrentColNum());
 			
 			// 승리 여부 판정 
-			if(false) {
+			if(panJung.allCheck()) {
+				winPlayer = wDol;
 				break;
 			}
 			
-			
-			
-			break;
 		}
+		System.out.println("플레이어 " + winPlayer + " 가 이겼습니다.");
+		
+		blackPlayer.closeScanner();
+		whitePlayer.closeScanner();
 	}
 
 }

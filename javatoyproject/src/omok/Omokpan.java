@@ -1,15 +1,12 @@
 package omok;
 
 public class Omokpan {
+
 	/*
 	 *  싱글톤 생성 시작
 	 */
 	private static Omokpan current = null;
 	
-	
-	// 한 번 메모리에 객체를 생성하면
-	// 추가적으로 새로운 객체를 생성하지 못하게 처리한다.
-	// 데이터베이스에서 커넥션풀, 스레드풀, 캐시, 로그 기록 객체 등
 	public static Omokpan getInstance() {
 		if(current == null) {
 			current = new Omokpan();
@@ -55,6 +52,14 @@ public class Omokpan {
 	public void setCurrentColNum(int currentColNum) {
 		this.currentColNum = currentColNum;
 	}
+	
+	public String[][] getPan() {
+		return pan;
+	}
+
+	public void setPan(String[][] pan) {
+		this.pan = pan;
+	}
 
 	public void showPan() {
 		String[][] arr = this.pan;
@@ -80,9 +85,7 @@ public class Omokpan {
 		}
 	}
 	
-	public boolean printPan(String player, String rowNum, String colNum) {
-		
-		this.stringToInt(rowNum, colNum);
+	public boolean printPan(String player) {
 		
 		// 입력 가능 범위를 벗어 났을 때 처리
 		if(this.currentRowNum >= 0 && this.currentRowNum <= 14
@@ -90,10 +93,10 @@ public class Omokpan {
 			// 해당 위치에 수가 두어진 경우에 처리 
 			if(this.pan[this.currentRowNum][this.currentColNum] == null) {
 				// 플레이어 1 인 경우 오목판에 1 을 그린다.
-				if(player.equals("1")) {
-					this.pan[this.currentRowNum][this.currentColNum] = "1";
+				if(player.equals("●")) {
+					this.pan[this.currentRowNum][this.currentColNum] = "●";
 				} else {
-					this.pan[this.currentRowNum][this.currentColNum] = "2";
+					this.pan[this.currentRowNum][this.currentColNum] = "○";
 				}
 				return true;
 			} else {
@@ -104,7 +107,6 @@ public class Omokpan {
 		}
 		
 	}
-	
 	
 	public void printDefault() {
 		int tmp = 15;
@@ -117,8 +119,4 @@ public class Omokpan {
 		}
 	}
 	
-	public void stringToInt(String rowNum, String colNum) {
-		currentRowNum = 15 - Integer.parseInt(rowNum);
-		currentColNum = colNum.toCharArray()[0] - 64;
-	}
 }
